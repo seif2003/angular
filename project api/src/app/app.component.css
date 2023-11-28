@@ -1,0 +1,16 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+body {
+    font-family: 'Poppins', sans-serif;
+  }
+
+
+.custom-input {
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+.custom-select {
+  border: 1px solid #ccc;
+  padding: 5px;
+}

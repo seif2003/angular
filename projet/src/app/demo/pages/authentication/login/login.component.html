@@ -1,0 +1,38 @@
+<div class="auth-main">
+  <div class="auth-wrapper v3">
+    <div class="auth-form">
+      <div class="card my-5">
+        <div class="card-body">
+          <a href="#" class="d-flex justify-content-center">
+            <img src="assets/images/logo-dark.svg" width="150px"/>
+          </a>
+          <div class="row">
+            <div class="d-flex justify-content-center">
+              <div class="auth-header">
+                <h2 class="text-secondary mt-5"><b>Hi, Welcome Back</b></h2>
+                <p class="fs-4 mt-2">Enter your credentials to continue</p>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="error !== ''" class="alert alert-danger mt-3" role="alert">
+            {{ error }}
+          </div>
+         
+          <div class="form-floating mb-3">
+            <input #mail type="text" class="form-control" id="floatingInput"  />
+            <label for="floatingInput">Email address / Username</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input #pw type="password" class="form-control" id="password"  />
+            <label for="password">Password</label>
+          </div>
+
+          <div class="d-grid mt-4">
+            <button type="button" class="btn btn-secondary" (click)="connect(mail.value,pw.value)">Sign In</button>
+          </div>
+          <hr />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

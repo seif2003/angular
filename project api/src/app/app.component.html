@@ -1,0 +1,92 @@
+<!-- Toolbar -->
+<div style="margin:50px;">
+  <div class="container mt-3">
+    <h1 class="display-4">Table</h1>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Status</th>
+          <th scope="col">Edit</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of employees">
+          <td>{{ emp.id }}</td>
+          <td>{{ emp.name }}</td>
+          <td>{{ emp.status }}</td>
+          <td>
+            <button class="btn btn-primary" (click)="selectEmployee(emp)">Edit</button>
+          </td>
+          <td>
+            <button class="btn btn-danger" (click)="deleteEmployee(emp.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="selectedEmployee" class="container mt-3">
+    <h2 class="display-5">Edit Employee</h2>
+    <form [formGroup]="editEmployeeForm" (submit)="updateEmployee()">
+      <table class="table table-bordered table-striped">
+        <tr>
+          <th><label for="name" class="sr-only">Name:</label></th>
+          <th><label for="status" class="sr-only">Status:</label></th>
+          <th>Add</th>
+        </tr>
+        <tr>
+          <td>
+            <div class="form-group mr-2">
+              <input id="name" class="custom-input" formControlName="name" placeholder="Name" required>
+            </div>
+          </td>
+          <td>
+            <div class="form-group mr-2">
+              <select id="status" class="custom-select" formControlName="status" required>
+                <option *ngFor="let option of statusOptions">{{ option }}</option>
+              </select>
+            </div>
+          </td>
+          <td>
+            <button type="submit">Update</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+
+  <div class="container mt-3">
+    <h2 class="display-5">Add Employee</h2>
+    <form [formGroup]="employeeForm" (submit)="addEmployee()" class="form-inline">
+      <table class="table table-bordered table-striped">
+        <tr>
+          <th><label for="name" class="sr-only">Name:</label></th>
+          <th><label for="status" class="sr-only">Status:</label></th>
+          <th>Add</th>
+        </tr>
+        <tr>
+          <td>
+            <div class="form-group mr-2">
+              <input id="name" class="custom-input" formControlName="name" placeholder="Name" required>
+            </div>
+          </td>
+          <td>
+            <div class="form-group mr-2">
+              <select id="status" class="custom-select" formControlName="status" required>
+                <option *ngFor="let option of statusOptions">{{ option }}</option>
+              </select>
+            </div>
+          </td>
+          <td>
+            <button type="submit">Add</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

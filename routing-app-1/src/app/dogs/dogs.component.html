@@ -1,0 +1,20 @@
+<div style="padding-top: 70px;">
+    <div class="container">
+        <table class="table table-bordered table-striped table-hover">
+        <thead>
+        <tr>
+        <th class="text-center">ID</th>
+        <th class="text-center">Name</th>
+        <th class="text-center">Options</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let dog of dogs">
+        <td>{{ dog.id }}</td>
+        <td>{{ dog.name }}</td>
+        <td><a class="btn btn-info" routerLink="/detailsdog/{{dog.id}}"><i class="fa fa-eye"></i> View </a></td></tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+    

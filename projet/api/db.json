@@ -1,0 +1,121 @@
+{
+  "admin": [
+    {
+      "username": "admin",
+      "password": "admin"
+    }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "title": "Web Development Fundamentals",
+      "lesson": "<h1><span style=\"color:#007bff;\">Introduction to HTML and CSS</span></h1><p>Learn the basics of web development with HTML and CSS. Understand how to structure content and style it to create visually appealing web pages.</p><h2><span style=\"color:#007bff;\">Key Concepts Covered</span><strong><span style=\"color:#007bff;\">HTML:</span></strong><span style=\"color:#007bff;\"> Learn to create the structure of a web page using HTML tags.</span><strong><span style=\"color:#007bff;\">CSS:</span></strong><span style=\"color:#007bff;\"> Explore the basics of styling and layout using CSS.</span></h2><h3><span style=\"color:#007bff;\">Building Your First Website</span></h3><p>Apply your knowledge by building a simple website from scratch. Practice creating different types of HTML elements and styling them with CSS.</p><hr><p>Get ready to embark on your journey into web development!</p>",
+      "qcm": {
+        "question": "What is the main purpose of CSS?",
+        "options": [
+          {
+            "answer": "Structuring content",
+            "correct": false
+          },
+          {
+            "answer": "Styling and layout",
+            "correct": true
+          },
+          {
+            "answer": "Server-side scripting",
+            "correct": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "title": "JavaScript Programming Basics",
+      "lesson": "<h1><span style=\"color:#007bff;\">Introduction to JavaScript</span></h1><p>Delve into the fundamentals of JavaScript programming. Learn about variables, data types, control structures, and functions.</p><h2><span style=\"color:#007bff;\">Key Topics Covered</span><strong><span style=\"color:#007bff;\">Variables and Data Types:</span></strong><span style=\"color:#007bff;\"> Understand how to store and manipulate data in JavaScript.</span><strong><span style=\"color:#007bff;\">Control Structures:</span></strong><span style=\"color:#007bff;\"> Learn about if statements, loops, and other control flow mechanisms.</span><strong><span style=\"color:#007bff;\">Functions:</span></strong><span style=\"color:#007bff;\"> Explore the concept of functions and their role in JavaScript.</span></h2><h3><span style=\"color:#007bff;\">Hands-On Coding Exercises</span></h3><p>Practice your JavaScript skills with coding exercises. Build small programs to reinforce your understanding of the language.</p><hr><p>Get ready to write dynamic and interactive web applications!</p>",
+      "qcm": {
+        "question": "What does the 'if' statement do in JavaScript?",
+        "options": [
+          {
+            "answer": "Defines a function",
+            "correct": false
+          },
+          {
+            "answer": "Declares a variable",
+            "correct": false
+          },
+          {
+            "answer": "Controls the flow of execution based on a condition",
+            "correct": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "title": "Responsive Web Design with Bootstrap",
+      "lesson": "<h1><span style=\"color:#007bff;\">Introduction to Bootstrap</span></h1><p>Discover the power of Bootstrap for creating responsive and visually appealing web designs. Learn about the Bootstrap grid system, components, and utilities.</p><h2><span style=\"color:#007bff;\">Key Features of Bootstrap</span><strong><span style=\"color:#007bff;\">Grid System:</span></strong><span style=\"color:#007bff;\"> Understand how to create responsive layouts with the Bootstrap grid.</span><strong><span style=\"color:#007bff;\">Components:</span></strong><span style=\"color:#007bff;\"> Explore pre-built components like navigation bars, cards, and forms.</span><strong><span style=\"color:#007bff;\">Utilities:</span></strong><span style=\"color:#007bff;\"> Use Bootstrap utilities to style and align elements quickly.</span></h2><h3><span style=\"color:#007bff;\">Building a Responsive Website</span></h3><p>Apply Bootstrap to design a responsive website. Learn how to adapt your site's layout to different screen sizes and devices.</p><hr><p>Elevate your web design skills with Bootstrap!</p>",
+      "qcm": {
+        "question": "What is the main purpose of the Bootstrap grid system?",
+        "options": [
+          {
+            "answer": "Styling text",
+            "correct": false
+          },
+          {
+            "answer": "Creating responsive layouts",
+            "correct": true
+          },
+          {
+            "answer": "Server-side scripting",
+            "correct": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "title": "Introduction to Backend Development with Node.js",
+      "lesson": "<h1><span style=\"color:#007bff;\">Getting Started with Node.js</span></h1><p>Explore the basics of backend development using Node.js. Learn about server-side JavaScript, npm packages, and building APIs.</p><h2><span style=\"color:#007bff;\">Key Concepts in Backend Development</span><strong><span style=\"color:#007bff;\">Node.js Fundamentals:</span></strong><span style=\"color:#007bff;\"> Understand the basics of Node.js and its role in backend development.</span><strong><span style=\"color:#007bff;\">npm Packages:</span></strong><span style=\"color:#007bff;\"> Explore the Node Package Manager (npm) and how to use third-party packages.</span><strong><span style=\"color:#007bff;\">Building APIs:</span></strong><span style=\"color:#007bff;\"> Learn how to create a simple API using Node.js.</span></h2><h3><span style=\"color:#007bff;\">Hands-On Project: Todo List API</span></h3><p>Build a Todo List API using Node.js. Implement CRUD operations and gain practical experience in backend development.</p><hr><p>Take your first steps into building robust backend systems!</p>",
+      "qcm": {
+        "question": "What is npm used for in Node.js development?",
+        "options": [
+          {
+            "answer": "Creating HTML pages",
+            "correct": false
+          },
+          {
+            "answer": "Defining API endpoints",
+            "correct": false
+          },
+          {
+            "answer": "Managing project dependencies and packages",
+            "correct": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "title": "Mobile App Development with React Native",
+      "lesson": "<h1 style='color: #007bff; font-weight: bold; font-style: italic; text-align: center;'>Welcome to Ben Amara</h1><h2 style='color: #28a745; font-weight: bold; font-style: italic;'>Course Overview</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p><h3 style='color: #dc3545; font-weight: bold; font-style: italic;'>Chapter 1: Introduction</h3><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p><h4 style='color: #ffc107; font-weight: bold; font-style: italic;'>Section 1.1: Getting Started</h4><p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum...</p><h5 style='color: #6c757d; font-weight: bold; font-style: italic;'>Quiz: Test Your Knowledge</h5><ul><li>Question 1: What is the capital of France?</li><li>Question 2: Who wrote 'Romeo and Juliet'?</li></ul>",
+      "qcm": {
+        "question": "What is one key feature of TypeScript that distinguishes it from JavaScript?",
+        "options": [
+          {
+            "answer": "Dynamic Typing",
+            "correct": false
+          },
+          {
+            "answer": "Static Typing",
+            "correct": true
+          },
+          {
+            "answer": "Prototype-based Inheritance",
+            "correct": false
+          }
+        ]
+      }
+    }
+  ]
+}
+
