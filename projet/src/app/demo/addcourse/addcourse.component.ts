@@ -8,8 +8,6 @@ import { NgxEditorModule } from 'ngx-editor';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
-
-
 @Component({
   selector: 'app-addcourse',
   standalone: true,

@@ -30,13 +30,10 @@ export default class AdminComponent {
     });
   }
 
-  reloadPage(){
-    window.location.reload();
-  }
 
   delete(id: number): void {
     this.CoursesService.deleteCourse(id).subscribe(() => {
-      this.reloadPage()
+      this.refrech()
     });
   }
 
