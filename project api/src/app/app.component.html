@@ -1,5 +1,35 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.6.4.slim.min.js" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap JavaScript and dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-yvXJXV5t9AP+JW6wWq4IHfrUZl7xCwFL4/nJn6LIEsOtjQp4Yo0nD/jF4N5iD4Z" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-fX2XZsZun7U8pPL4vKq7fUJ8CxM6K/IvRM+a8U2VPcS/+PQo7wX4LvI7L2gIebDA" crossorigin="anonymous"></script>
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color:beige;">
+  <div class="container-fluid"  >
+    <img src="http://www.benamara.tn/assets/logo-cdf8c5ab.png" alt="" class="logo logo-lg" width="120px" style="margin-right:30px;"/>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li>
+          <button type="button" class="btn btn-primary position-relative">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
+              <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6"/>
+            </svg>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              {{number_employees}}
+              <span class="visually-hidden">unread messages</span>
+            </span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 <!-- Toolbar -->
-<div style="margin:50px;">
+<div >
+<div style="padding:50px;">
   <div class="container mt-3">
     <h1 class="display-4">Table</h1>
     <table class="table table-bordered table-striped">
@@ -28,35 +58,6 @@
     </table>
   </div>
 
-  <div *ngIf="selectedEmployee" class="container mt-3">
-    <h2 class="display-5">Edit Employee</h2>
-    <form [formGroup]="editEmployeeForm" (submit)="updateEmployee()">
-      <table class="table table-bordered table-striped">
-        <tr>
-          <th><label for="name" class="sr-only">Name:</label></th>
-          <th><label for="status" class="sr-only">Status:</label></th>
-          <th>Add</th>
-        </tr>
-        <tr>
-          <td>
-            <div class="form-group mr-2">
-              <input id="name" class="custom-input" formControlName="name" placeholder="Name" required>
-            </div>
-          </td>
-          <td>
-            <div class="form-group mr-2">
-              <select id="status" class="custom-select" formControlName="status" required>
-                <option *ngFor="let option of statusOptions">{{ option }}</option>
-              </select>
-            </div>
-          </td>
-          <td>
-            <button type="submit">Update</button>
-          </td>
-        </tr>
-      </table>
-    </form>
-  </div>
 
   <div class="container mt-3">
     <h2 class="display-5">Add Employee</h2>
@@ -89,4 +90,44 @@
   </div>
 </div>
 
+<div class="modal fade" id="addEmployeeModal" tabindex="-1" aria-labelledby="addEmployeeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title" id="addEmployeeModalLabel">Add Employee</h6>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="employeeForm" (submit)="addEmployee()" class="form-inline">
+          <table class="table table-bordered table-striped">
+            <tr>
+              <th><label for="name" class="sr-only">Name:</label></th>
+              <th><label for="status" class="sr-only">Status:</label></th>
+              <th>Add</th>
+            </tr>
+            <tr>
+              <td>
+                <div class="form-group mr-2">
+                  <input id="name" class="custom-input" formControlName="name" placeholder="Name" required>
+                </div>
+              </td>
+              <td>
+                <div class="form-group mr-2">
+                  <select id="status" class="custom-select" formControlName="status" required>
+                    <option *ngFor="let option of statusOptions">{{ option }}</option>
+                  </select>
+                </div>
+              </td>
+              <td>
+                <button type="submit">Add</button>
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
 <router-outlet></router-outlet>

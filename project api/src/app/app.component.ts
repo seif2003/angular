@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EmployeeService } from './employee.service';
 import { Employee } from './employee';
+import { MatDialog } from '@angular/material/dialog';
+import { EditEmployeeDialogComponentComponent } from './edit-employee-dialog-component/edit-employee-dialog-component.component';
 
 @Component({
   selector: 'app-root',
@@ -15,8 +17,9 @@ export class AppComponent {
   editEmployeeForm: FormGroup;
   selectedEmployee: Employee | undefined;
   statusOptions: string[] = ['Active', 'Inactive'];
+  number_employees:Number;
 
-  constructor(private empService: EmployeeService, private fb: FormBuilder) {
+  constructor(private empService: EmployeeService, private fb: FormBuilder,private dialog: MatDialog) {
     this.employeeForm = this.createEmployeeForm();
     this.editEmployeeForm = this.createEmployeeForm();
 
@@ -29,12 +32,12 @@ export class AppComponent {
       status: ['', Validators.required]
     });
   }
-
   
 
   private loadEmployees(): void {
     this.empService.getEmployees().subscribe(response => {
       this.employees = response.map(item => new Employee(item.id, item.name, item.status));
+      this.number_employees = this.employees.length;
     });
   }
 
@@ -48,26 +51,26 @@ export class AppComponent {
     });
   }
 
-  public selectEmployee(employee: Employee): void {
-    this.selectedEmployee = { ...employee };
-    this.editEmployeeForm.patchValue({
-      name: this.selectedEmployee.name,
-      status: this.selectedEmployee.status
+  selectEmployee(employee: any): void {
+    const dialogRef = this.dialog.open(EditEmployeeDialogComponentComponent, {
+      width: '400px',
+      data: { name: employee.name, status: employee.status,id:employee.id },
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.updateEmployee(result);
+      }
     });
   }
 
-  public updateEmployee(): void {
-    if (this.selectedEmployee) {
-      const updatedEmployeeData = this.editEmployeeForm.value;
-      updatedEmployeeData.status = updatedEmployeeData.status.toLowerCase();
-
+  public updateEmployee(selectedEmployee): void {
+    if (selectedEmployee) {
       this.empService.updateEmployee({
-        ...this.selectedEmployee,
-        ...updatedEmployeeData
+        ...selectedEmployee,
       }).subscribe(() => {
         this.loadEmployees();
-        this.selectedEmployee = undefined;
-        this.editEmployeeForm.reset();
+        selectedEmployee = undefined;
       });
     }
   }
